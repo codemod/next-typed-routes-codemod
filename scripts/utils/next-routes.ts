@@ -83,9 +83,12 @@ export async function getNextResolvedRoute(
     routeSegments.pop();
   }
 
-  // remove group routes
+  // remove group routes and parallel routes
   const filteredSegments = routeSegments.filter((segment) => {
-    return !segment.startsWith("(") || !segment.endsWith(")");
+    const isGroupRoute = segment.startsWith("(") && segment.endsWith(")");
+    const isParallelRoute = segment.startsWith("@");
+
+    return !isGroupRoute && !isParallelRoute;
   });
 
   const routePath =
