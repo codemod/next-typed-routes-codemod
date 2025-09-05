@@ -9,6 +9,6 @@ nodes:
         js-ast-grep:
           js_file: scripts/codemod.ts
           language: "tsx"
-        include:
-          - "**/app/**/page.tsx"
-          - "**/app/**/layout.tsx"
+          include:
+            - "**/app/**/page.tsx"
+            - "**/app/**/layout.tsx"

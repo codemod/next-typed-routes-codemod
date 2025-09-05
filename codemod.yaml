@@ -1,7 +1,7 @@
 schema_version: "1.0"
 
 name: "next-typed-routes"
-version: "0.1.0"
+version: "0.1.3"
 description: "Transform Next.js app router page components to use typed routes"
 author: "Mo Mohebifar <mo@codemod.com>"
 license: "MIT"

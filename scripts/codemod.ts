@@ -25,13 +25,17 @@ async function transform(root: SgRoot<TSX>): Promise<string | null> {
   }
 
   const filePath = root.filename();
-  const path = await getNextResolvedRoute(filePath);
+  const resolvedRoute = await getNextResolvedRoute(filePath);
 
-  const isLayout = path?.endsWith("/layout.tsx");
+  if (!resolvedRoute) {
+    return null;
+  }
+
+  const isLayout = filePath.endsWith("/layout.tsx");
 
   const typeName = isLayout ? "LayoutProps" : "PageProps";
 
-  const edit = typeAnnotation.replace(`${typeName}<"${path}">`);
+  const edit = typeAnnotation.replace(`${typeName}<"${resolvedRoute}">`);
   const result = rootNode.commitEdits([edit]);
 
   return result;
