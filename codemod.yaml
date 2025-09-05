@@ -1,0 +1,19 @@
+schema_version: "1.0"
+
+name: "next-typed-routes"
+version: "0.1.0"
+description: "Transform Next.js app router page components to use typed routes"
+author: "Mo Mohebifar <mo@codemod.com>"
+license: "MIT"
+workflow: "workflow.yaml"
+category: "migration"
+repository: "https://github.com/codemod/next-typed-routes-codemod"
+
+targets:
+  languages: ["tsx"]
+
+keywords: ["transformation", "migration", "next.js", "app router", "next"]
+
+registry:
+  access: "public"
+  visibility: "public"
